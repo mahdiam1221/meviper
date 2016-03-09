@@ -134,11 +134,11 @@ local function run(msg, matches)
       return "آیدی گروه  " ..string.gsub(msg.to.print_name, "_", " ").. ":\n\n"..msg.to.id  
     end
   end
-  if matches[1]:lower() == 'خروج' then-- /kickme
+  if matches[1]:lower() == 'کیکم کن' then-- /kickme
   local receiver = get_receiver(msg)
     if msg.to.type == 'chat' then
       local name = user_print_name(msg.from)
-      savelog(msg.to.id, name.." ["..msg.from.id.."] با استفاده از خروج خارج شوید ")-- Save to logs
+      savelog(msg.to.id, name.." ["..msg.from.id.."] با استفاده از کیکم کن خارج شوید ")-- Save to logs
       chat_del_user("chat#id"..msg.to.id, "user#id"..msg.from.id, ok_cb, false)
     end
   end
@@ -216,7 +216,7 @@ local function run(msg, matches)
 	end
  end
 
-if matches[1]:lower() == 'اخراج' then
+if matches[1]:lower() == 'کیک' then
     if type(msg.reply_id)~="nil" and is_momod(msg) then
       if is_admin(msg) then
         local msgr = get_message(msg.reply_id,Kick_by_reply_admins, false)
@@ -314,12 +314,12 @@ return {
     "^(لیست بن)$",
     "^(لیست سوپر بن)$",
     "^(بن) (.*)$",
-    "^(اخراج)$",
+    "^(کیک)$",
     "^(حذف بن) (.*)$",
     "^(حذف سوپر بن) (.*)$",
     "^(حذف سوپر بن)$",
-    "^(اخراج) (.*)$",
-    "^(خروج)$",
+    "^(کیک) (.*)$",
+    "^(کیکم کن)$",
     "^(بن)$",
     "^(حذف بن)$",
     "^(ایدی)$",
