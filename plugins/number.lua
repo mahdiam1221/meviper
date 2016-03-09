@@ -6,7 +6,7 @@ end
 
 return {
 patterns = {
-"^شماره ربات$"
+"^شماره بده$"
 
 },
 run = run
